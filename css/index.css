@@ -45,17 +45,7 @@
 .index_left>.logon>.logon_title{
   background: url("../img/index/logon_bg.gif") repeat;
 }
-.title{ 
-  height: 38px; 
-  line-height: 38px;
-  font-size:20px; 
-  color:#000;
-  font-family: 华文新魏;
-  font-weight: bold;
-  text-align: center;
-  background:url("../img/index/logon_left.gif") no-repeat;
-  margin:0;
-}
+
 .index_left>.logon>.logon_content,.index_left>.notice>.notice_content{
   border:1px solid #3b2d25;
   background:#ded0c7;
