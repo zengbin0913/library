@@ -1,0 +1,28 @@
+.guider{
+    margin-top:20px;
+    width: 100%;
+    display: flex;
+}
+.guider_nav{
+    width: 20%;
+}
+.guider_title{ 
+    background: url("../img/index/td_07.gif");
+}
+.guider_title>p{
+    height: 38px;
+    line-height:38px;
+    text-align:center;
+    font-size:20px;
+    color:#000;
+    font-family: 华文新魏;
+    font-weight:bold;
+    background: url("../img/index/guider_left.gif") no-repeat;
+}
+.guider_nav>ul{
+    border:1px solid #3b2d25;
+    background-image:linear-gradient(to bottom,#0aa1ed,#ded0c7);
+}
+.guider_content{
+    width: 80%;
+}
