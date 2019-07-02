@@ -16,7 +16,7 @@ INSERT INTO book_family VALUES(NULL,"政治类",103);
 INSERT INTO book_family VALUES(NULL,"地理类",104);
 
 INSERT INTO book_family VALUES(NULL,"英语类",201);
-INSERT INTO book_family VALUES(NULL,"日语",202);
+INSERT INTO book_family VALUES(NULL,"日语类",202);
 INSERT INTO book_family VALUES(NULL,"韩语类",203);
 INSERT INTO book_family VALUES(NULL,"德语类",204);
 INSERT INTO book_family VALUES(NULL,"其他语言类",205);

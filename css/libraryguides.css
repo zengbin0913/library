@@ -19,7 +19,11 @@
     font-weight:bold;
     background: url("../img/index/guider_left.gif") no-repeat;
 }
-.guider_nav>ul,.guider_nav>div>ul{
+.guider_nav>ul{
+    border:1px solid #3b2d25;
+    background:#ded0c7
+}
+.guider_nav>div>ul{
     border:1px solid #3b2d25;
     background-image:linear-gradient(to bottom,#0aa1ed,#ded0c7);
 }
@@ -43,7 +47,7 @@
     font-family: 隶书;
 }
 .guider_content ul{
-    height: 278px;
+    /* height: 278px; */
     list-style-image: url("../img/index/Explain_03.jpg");
     list-style-position: inside;
     border:1px solid #B1C8D7;
@@ -52,4 +56,7 @@
     font-size:16px;
     padding-left:10px;
     color:#1E50A2;
+}
+.guider_content ul li a:hover{
+    color:#b63300;
 }
