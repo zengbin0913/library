@@ -1,0 +1,33 @@
+.headleft{
+	margin-top:20px;
+	padding-left:60px;
+    height: 40px;
+    background-color: #A11111;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: left;
+    font-family: 楷体_GB2312;
+}
+#Simplesearch{
+	background-color:#fff;
+	height: 400px;
+}
+#Simplesearch h4{
+	color: #D20000;
+	width: 90%;
+    text-align: left;
+	margin:10px auto;
+}
+#Simplesearch table{
+	border: 1px solid #6298E2;
+	width: 50%;
+    border-collapse: collapse;
+	margin:0 auto;
+}
+#Simplesearch table td{	
+    border: 1px solid #6298E2;
+    background-color: #EBF2FA; 
+	padding: 10px;  
+	font-size:16px;
+}

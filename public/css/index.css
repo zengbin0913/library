@@ -1,0 +1,321 @@
+/* 轮播图 */
+#banner{
+	width:1000px;
+    overflow:hidden;
+    position:relative;
+	margin-top:10px;
+}
+#banner #btn-left+ul{
+	width: 4000px;
+	margin-left:0px;
+}
+#ul-imgs.transition{
+    transition:all .5s linear;
+}
+#ul-imgs>li{
+    width:1000px;
+    float:left;
+}
+#ul-imgs img{
+    width:1000px;
+}
+ #ul-idxs{
+    width:100px;
+    margin:0 auto;
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    margin-left:-50px;
+}
+#ul-idxs>li{
+    float:left;
+    width:10px; height:10px;
+    background-color:#fff;
+    border-radius:5px;
+    margin:0 5px;
+    cursor:pointer;
+}
+#ul-idxs>li.active{
+    background-color:blue;
+}
+#btn-left,#btn-right{
+    width:60px;
+    height:100%;
+    position:absolute;
+    top:0;
+    background-repeat:no-repeat;
+    background-position:center;
+    cursor:pointer;
+ }
+ #btn-left{
+    left:20px;
+    background-image:url(../img/index/left_ar.png);
+ }
+ #btn-right{
+    right:20px;
+    background-image:url(../img/index/right_ar.png);
+ }
+ #btn-left:hover,#btn-right:hover{
+    background-size:40px 70px
+ }
+/*1主体上*/
+.content_top{
+  margin-top:20px;
+  width: 100%;
+  height: 438px;
+  border:1px solid #ded0c7;
+  border-radius: 4px;
+}
+/*①左*/
+.index_left{
+  width: 40%;
+  height: 438px;
+}
+/* 左上 */
+.index_left>.logon,.index_left>.notice{
+  width: 100%;
+  height: 208px;
+  margin-bottom:10px;
+}
+.index_left>.notice{
+  height: 218px;
+}
+.index_left>.logon>.logon_title{
+  background: url("../img/index/logon_bg.gif") repeat;
+}
+
+.index_left>.logon>.logon_content,.index_left>.notice>.notice_content{
+  border:1px solid #3b2d25;
+  background:#ded0c7;
+  border-radius: 4px;
+}
+.index_left .logon_content table{
+  width: 100%;
+  margin:10px auto;
+}
+.index_left .logon_content table td{
+  padding:0 5px;
+  height: 36px;
+  font-size: 12px; 
+  line-height:20px;
+}
+button.btn{
+  height: 36px;
+  font-size: 12px;
+  padding:0.25rem 2rem;
+}
+.index_left>.notice>.notice_title{
+  background: url("../img/index/info_11.gif") repeat;
+}
+.index_left>.notice>.notice_title p{
+  background:url("../img/index/Notice_left_03.gif") no-repeat;
+}
+.more{
+  text-align:right; 
+}
+.more>a{
+  font-size:16px;
+  font-weight:bold;
+  color: #0aa1ed;
+}
+/*②中*/
+.index_center{
+  width: 60%;
+  margin-left:10px;
+  border-left:1px solid #ded0c7;
+  border-right:1px solid #ded0c7;
+}
+/* 中上 */
+.index_center>.center_top{
+  width: 100%;
+  height: 438px;
+}
+.index_center>.center_top>div:first-child{
+  position:relative;
+}
+.w-98{
+  width: 98%;
+}
+#yusi3{
+  margin-right:10px;
+}
+#yusi5{
+  width: 190px;
+  position:absolute;
+  top:32px;
+  left:56px;
+}
+#biaoyu{
+  width: 160px;
+  position:absolute;
+  top:30px;
+  right:75px;
+}
+.index_center>.center_top>div:last-child>img{
+  width: 98%;
+  height: 148px;
+}
+/*③右*/
+.index_right{
+  width: 20%;
+}
+/* 右上 */
+.index_right>.right_top{
+  width: 100%;
+  height: 438px;
+}
+.index_right>.right_top>.right_top_title,.index_right>.right_top>.right_top_title2{
+  width: 100%;
+  height:37px;
+  line-height:37px;
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+  color:#8a5dad;
+  background:url("../img/index/ReadingGroups.gif") no-repeat;
+}
+.index_right>.right_top>.right_top_content,.index_right>.right_top>.right_top_content2{
+  border:1px solid #3b2d25;
+  border-radius: 4px;
+}
+.w-30{  width: 30%;}
+.w-70{width: 70%;}
+
+/*2主体下*/
+.content_bottom{
+  width: 100%;
+  margin-top:20px;
+}
+/* ① */
+.left{
+  width: 40%;
+}
+.left a.title{
+  background:0;
+}
+.left>.aside>div{
+  width: 100%;
+  margin-bottom:10px;
+  background:url("../img/index/td_02.gif");
+}
+.left>.aside>div>#p1{
+  background:url("../img/index/Notice_left_02.gif") no-repeat;
+}
+.left>.aside>div:nth-child(2){
+  background:url("../img/index/LibraryGuides_td_01.gif");
+}
+.left>.aside>div>#p2{
+  background:url("../img/index/lGuide_left.gif") no-repeat;
+}
+.left>.aside>div>#p3{
+  background:url("../img/index/rInstruct_left.gif") no-repeat;
+}
+.left>.aside>div:nth-child(4){
+  background:url("../img/index/BookIntroduce_td_01.gif");
+}
+.left>.aside>div>#p4{
+  background:url("../img/index/bIntroduce_left.gif") no-repeat;
+}
+.left>.aside>div:nth-child(5){
+  background:url("../img/index/LibraryResources_td_01.gif");
+}
+.left>.aside>div>#p5{
+  background:url("../img/index/lResources_left.gif") no-repeat 0px;
+}
+.left>.aside>div:nth-child(6){
+  background:url("../img/index/ReadingGroups_td_01.gif");
+}
+.left>.aside>div>#p6{
+  background:url("../img/index/rGroups_left.gif") no-repeat;
+}
+.left>.aside>div:nth-child(7){
+  margin-bottom:30px;
+  background:url("../img/index/InformationSearch_td_01.gif");
+}
+.left>.aside>div>#p7{
+  background:url("../img/index/search_left.gif") no-repeat;
+}
+.left>.aside>div:nth-child(8){
+  margin-bottom:5px;
+  background:url("../img/index/td_12.gif");
+}
+.left>.aside>div>#p8{
+  background:url("../img/index/FriendUrl_left_01.gif") no-repeat;
+}
+.left>.aside>ul{
+  background-image:linear-gradient(to bottom,#0aa1ed,#ded0c7);
+  border:1px solid #3b2d25;
+  border-radius: 4px;
+}
+/* ②右 */
+.right{
+  width: 80%;
+  display:flex;
+  flex-wrap: wrap;
+}
+.right>div{
+  margin-left:10px;
+  width: 100%;
+  background:url("../img/index/f2s.png") no-repeat 0px 0px;
+  position: relative;
+}
+.right>div:nth-child(2){
+  width: 100%;
+  background:url("../img/index/f3s.png") no-repeat;
+  position: relative;
+}
+.right>div>ul{
+  width: 200px;
+  height: 120px;
+  position:absolute;
+  bottom:10px;
+  right:70px;
+  list-style: disc inside;
+  border:2px solid #8a5dad;
+  border-radius: 4px;
+}
+.right>div>ul>li{
+  padding:5px;
+}
+.right>div>ul>li>a{
+  color: #fff;
+  font-weight: bold;
+}
+.picScoll{
+	border:1px solid #000;
+	position:relative;
+}
+.picScoll ul{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+.picScoll ul li~li{
+	margin-left:20px;
+}
+.picScoll ul li a{
+	width: 100px;
+	display: block;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	text-align:center;
+}
+.picScoll>a{
+	display:block;
+	width: 10px;
+	height: 17px;
+	overflow:hidden;
+}
+a.prev{
+	position:absolute;
+	top:80px;
+	left:0px;
+	background:url("../img/index/arr_lef.png") no-repeat;
+}
+a.next{
+	position:absolute;
+	top:80px;
+	right:0px;
+	background:url("../img/index/arr_rig.png") no-repeat;
+}

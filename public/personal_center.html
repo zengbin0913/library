@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人中心</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/comm.css"/>
+	<link rel="stylesheet" href="css/detailcommom.css"/>
+  <link rel="stylesheet" href="css/personal.css"/>
+</head>
+<body>
+     <!-- 头 -->
+    <header class="my_header" id="header"></header>
+    <!-- 主体 -->
+    <div class="guider">
+        <div class="guider_nav">
+            <div class="guider_title"><p class="m-0">导航</p></div>
+            <ul class="mt-3">
+                <li class="text-center mb-1"><a href="javascript:;" data-toggle="tab" data-target="personal1">基本信息</a></li>
+                <li class="text-center mb-1"><a href="javascript:;" data-toggle="tab" data-target="personal2">借阅信息</a></li>
+            </ul>
+            <div>
+                <div class="friend_title">
+                    <p id="p8" class="text-center title">友情链接</p>
+                </div>
+                <ul class="mt-3">
+                    <li class="mb-1 text-center pt-1"><a href="http://www.changshalib.cn/" target="_blank">长沙图书馆</a></li>
+                    <li class="mb-1 text-center"><a href="http://www.nlc.cn/" target="_blank">国家图书馆</a></li>
+                    <li class="mb-1 text-center"><a href="http://www.zjlib.cn/" target="_blank">浙江图书馆</a></li>
+                    <li class="mb-1 text-center"><a href="https://www.szlib.org.cn/" target="_blank">深圳图书馆</a></li>
+                    <li class="mb-1 text-center"><a href="http://www.jslib.org.cn/" target="_blank">南京图书馆</a></li>
+                    <li class="mb-1 text-center"><a href="http://www.bj-publib.net.cn/" target="_blank">北京图书馆</a></li>
+                    <li class="mb-1 text-center pb-1"><a href="http://www.gzlib.gov.cn/" target="_blank">广州图书馆</a></li>
+                    </ul>
+            </div>
+         </div>
+        <div class="guider_content">
+           <div class="pt-3 pl-3">个人中心</div>
+					 <div id="personal">
+							<div class="new_title mt-3">读者登录</div>
+							<table>
+								<tr>
+									<td class="w-25">用户名称</td>
+									<td><input type="text" class="w-50 h-100" placeholder="请输入用户名"></td>
+								</tr>
+								<tr>
+									<td>用户密码</td>
+									<td><input type="password" class="w-50 h-100" placeholder="请输入密码"></td>
+								</tr>
+								<tr>
+									<td>登录方式</td>
+									<td>
+										<input type="radio" id="uname" class="h-100"><label for="uname">昵称</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" id="lid"><label for="lid">借书证号</label> 
+									</td>
+								</tr>
+								<tr>
+									<td>确认是否登录</td>
+									<td colspan="2">
+										<button class="w-15 btn-success">登录</button>&nbsp;&nbsp;&nbsp;&nbsp; 
+										<button class="w-15 btn-danger">取消</button>
+									</td>
+								</tr>
+							</table>
+					 </div> 
+					 <div id="personal1" class="hide">
+							<h1 class="text-center pt-1">基本信息</h1>
+							<table class="mt-3">
+               <tr>
+                  <td>姓名：</td>
+									<td><span>张三</span></td>
+                </tr>
+                <tr>
+                  <td>性别：</td>
+									<td><span>男</span></td>
+                </tr>
+                <tr>
+                  <td>借书证号：</td>
+									<td><span>1</span></td>
+                </tr>
+                <tr>
+                  <td>身份：</td>
+									<td>
+										<input type="radio">老师 &nbsp;&nbsp;
+										<input type="radio">学生
+									</td>
+                </tr>
+								<tr>
+                  <td>联系方式：</td>
+									<td>
+										<span>15815533048</span>
+									</td>
+                </tr>
+							</table>
+					 </div>
+					 <div id="personal2" class="hide">
+							<h1 class="text-center pt-1">借阅信息</h1>
+							<table class="mt-3">
+								<tr>
+									<th>书名</th>
+									<th>作者</th>
+									<th>借书日期</th>
+									<th>还书日期</th>
+								</tr>
+								<tr>
+									<td>数学</td>
+									<td>李好</td>
+									<td>2019/05/01</td>
+									<td>2019/06/01</td>
+								</tr>
+								<tr>
+									<td>数学</td>
+									<td>李好</td>
+									<td>2019/05/01</td>
+									<td>2019/06/01</td>
+								</tr>
+								<tr>
+									<td>数学</td>
+									<td>李好</td>
+									<td>2019/05/01</td>
+									<td>2019/06/01</td>
+								</tr>
+							</table>
+					 </div>
+        </div>
+    </div>
+    <!-- 脚 -->
+    <footer class="my_footer"></footer>
+		<script src="js/guides.js"></script>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/header.js"></script>
+		<script src="js/footer.js"></script>
+</body>
+</html>

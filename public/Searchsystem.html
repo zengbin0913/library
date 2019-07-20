@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>第一中学图书馆书目检索系统</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/comm.css"/>
+  <link rel="stylesheet" href="css/Searchsystem.css"/>
+</head>
+<body>
+	<header class="my_header" id="header"></header>
+	<div class="headleft">第一中学图书馆书目检索系统</div>
+	<div id="Simplesearch">
+		<table></table>
+		<h4>馆藏书目检索</h4>
+		<table>
+			<tr>
+				<td class="text-right">文献类型：</td>
+				<td>
+					<input type="radio" id="allbook"><label for="allbook">所有图书</label>&nbsp;&nbsp;
+					<input type="radio" id=" magazine"><label for=" magazine">所有期刊</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right">检索模式：</td>
+				<td>
+					<input type="radio" id="any"><label for="any">任意匹配</label>&nbsp;&nbsp;
+					<input type="radio" id="sure"><label for="sure">前方一致</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right">每页显示：</td>
+				<td>
+					<select name="" id="">
+						<option value="">20</option>
+						<option value="">30</option>
+						<option value="">50</option>
+						<option value="">100</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right">检索类型：</td>
+				<td>
+					<select name="" id="">
+						<option value="">书名</option>
+						<option value="">作者</option>
+						<option value="">ISBN号</option>
+						<option value="">出版社</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="text-right">关键字：</td>
+				<td>
+					<input type="text">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="text-center">
+					<button>检索</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button>清除</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+  <!-- 脚 -->
+  <footer class="my_footer">
+  </footer>
+	<script src="js/guides.js"></script>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/header.js"></script>
+	<script src="js/footer.js"></script>
+</body>
+</html>

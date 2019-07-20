@@ -98,23 +98,167 @@ INSERT INTO book VALUES(NULL,"烘焙","img/list/meishi/hongbei.jpg","安徽文�
 INSERT INTO book VALUES(NULL,"特别关注","img/list/zazhi/tebieguanzhu.jpg","中国邮政出版社","2019-05-01",5,"温度,深度","李佳",3,1,"KD-2",17);
 INSERT INTO book VALUES(NULL,"生活周刊","img/list/zazhi/shenghuozhoukan4.jpg","二十一世纪出版社","2019-05-18",5,"寻找一杯号咖啡","李雄","3",1,"KD-3",17);
 
+#2-1图书在线状态
+CREATE TABLE book_status(
+	sid INT PRIMARY KEY AUTO_INCREMENT, #图书条形码
+	bstatus TINYINT, #图书现状 1-在架上 0-已借出
+	bid INT #外键关联图书表
+);
+INSERT INTO book_status VALUES(16000,1,1);
+INSERT INTO book_status VALUES(NULL,0,1);
+INSERT INTO book_status VALUES(NULL,1,1);
+
+INSERT INTO book_status VALUES(16100,1,2);
+INSERT INTO book_status VALUES(NULL,0,2);
+INSERT INTO book_status VALUES(NULL,1,2);
+
+INSERT INTO book_status VALUES(17000,1,3);
+INSERT INTO book_status VALUES(NULL,0,3);
+INSERT INTO book_status VALUES(NULL,1,3);
+
+INSERT INTO book_status VALUES(17100,1,4);
+INSERT INTO book_status VALUES(NULL,1,4);
+INSERT INTO book_status VALUES(NULL,1,4);
+
+INSERT INTO book_status VALUES(18000,1,5);
+INSERT INTO book_status VALUES(NULL,0,5);
+INSERT INTO book_status VALUES(NULL,1,5);
+
+INSERT INTO book_status VALUES(18100,1,6);
+INSERT INTO book_status VALUES(NULL,0,6);
+INSERT INTO book_status VALUES(NULL,1,6);
+
+INSERT INTO book_status VALUES(19000,1,7);
+INSERT INTO book_status VALUES(NULL,0,7);
+INSERT INTO book_status VALUES(NULL,1,7);
+
+INSERT INTO book_status VALUES(19100,1,8);
+INSERT INTO book_status VALUES(NULL,1,8);
+INSERT INTO book_status VALUES(NULL,1,8);
+
+INSERT INTO book_status VALUES(20000,1,9);
+INSERT INTO book_status VALUES(NULL,1,9);
+INSERT INTO book_status VALUES(NULL,1,9);
+
+INSERT INTO book_status VALUES(20100,1,10);
+INSERT INTO book_status VALUES(NULL,0,10);
+INSERT INTO book_status VALUES(NULL,1,10);
+
+INSERT INTO book_status VALUES(21000,1,11);
+INSERT INTO book_status VALUES(NULL,0,11);
+INSERT INTO book_status VALUES(NULL,1,11);
+
+INSERT INTO book_status VALUES(21100,1,12);
+INSERT INTO book_status VALUES(NULL,1,12);
+INSERT INTO book_status VALUES(NULL,1,12);
+
+INSERT INTO book_status VALUES(22000,1,13);
+INSERT INTO book_status VALUES(NULL,0,13);
+INSERT INTO book_status VALUES(NULL,1,13);
+
+INSERT INTO book_status VALUES(22100,1,14);
+INSERT INTO book_status VALUES(NULL,0,14);
+INSERT INTO book_status VALUES(NULL,0,14);
+
+INSERT INTO book_status VALUES(23000,1,15);
+INSERT INTO book_status VALUES(NULL,1,15);
+INSERT INTO book_status VALUES(NULL,1,15);
+
+INSERT INTO book_status VALUES(23100,1,16);
+INSERT INTO book_status VALUES(NULL,0,16);
+INSERT INTO book_status VALUES(NULL,1,16);
+
+INSERT INTO book_status VALUES(24000,1,17);
+INSERT INTO book_status VALUES(NULL,0,17);
+INSERT INTO book_status VALUES(NULL,1,17);
+
+INSERT INTO book_status VALUES(24100,1,18);
+INSERT INTO book_status VALUES(NULL,1,18);
+INSERT INTO book_status VALUES(NULL,1,18);
+
+INSERT INTO book_status VALUES(25000,1,19);
+INSERT INTO book_status VALUES(NULL,1,19);
+INSERT INTO book_status VALUES(NULL,1,19);
+
+INSERT INTO book_status VALUES(25100,1,20);
+INSERT INTO book_status VALUES(NULL,0,20);
+INSERT INTO book_status VALUES(NULL,1,20);
+
+INSERT INTO book_status VALUES(26000,1,21);
+INSERT INTO book_status VALUES(NULL,1,21);
+INSERT INTO book_status VALUES(NULL,1,21);
+
+INSERT INTO book_status VALUES(26100,1,22);
+INSERT INTO book_status VALUES(NULL,0,22);
+INSERT INTO book_status VALUES(NULL,1,22);
+
+INSERT INTO book_status VALUES(27000,1,23);
+INSERT INTO book_status VALUES(NULL,0,23);
+INSERT INTO book_status VALUES(NULL,1,23);
+
+INSERT INTO book_status VALUES(27100,1,24);
+INSERT INTO book_status VALUES(NULL,0,24);
+INSERT INTO book_status VALUES(NULL,1,24);
+
+INSERT INTO book_status VALUES(28000,1,25);
+INSERT INTO book_status VALUES(NULL,0,25);
+INSERT INTO book_status VALUES(NULL,1,25);
+
+INSERT INTO book_status VALUES(28100,1,26);
+INSERT INTO book_status VALUES(NULL,0,26);
+INSERT INTO book_status VALUES(NULL,1,26);
+
+INSERT INTO book_status VALUES(29000,1,27);
+INSERT INTO book_status VALUES(NULL,0,27);
+INSERT INTO book_status VALUES(NULL,1,27);
+
+INSERT INTO book_status VALUES(29100,1,28);
+INSERT INTO book_status VALUES(NULL,1,28);
+INSERT INTO book_status VALUES(NULL,1,28);
+
+INSERT INTO book_status VALUES(30000,1,29);
+INSERT INTO book_status VALUES(NULL,0,29);
+INSERT INTO book_status VALUES(NULL,1,29);
+
+INSERT INTO book_status VALUES(30100,1,30);
+INSERT INTO book_status VALUES(NULL,0,30);
+INSERT INTO book_status VALUES(NULL,1,30);
+
+INSERT INTO book_status VALUES(31000,1,31);
+INSERT INTO book_status VALUES(NULL,0,31);
+INSERT INTO book_status VALUES(NULL,1,31);
+
+INSERT INTO book_status VALUES(31100,1,32);
+INSERT INTO book_status VALUES(NULL,0,32);
+INSERT INTO book_status VALUES(NULL,1,32);
+
+INSERT INTO book_status VALUES(32000,1,33);
+INSERT INTO book_status VALUES(NULL,0,33);
+INSERT INTO book_status VALUES(NULL,1,33);
+
+INSERT INTO book_status VALUES(32100,1,34);
+INSERT INTO book_status VALUES(NULL,0,34);
+INSERT INTO book_status VALUES(NULL,1,34);
+
+
 #3用户信息表
 CREATE TABLE user(
 	uid INT PRIMARY KEY AUTO_INCREMENT,
 	uname VARCHAR(16), #用户姓名
+	upwd VARCHAR(16),#用户密码 必须是6-8且包含大写字母和数字
 	email VARCHAR(32), #用户邮箱
 	phone VARCHAR(11), #联系方式
 	sex TINYINT,  #用户性别 1-男 0-女
 	age TINYINT,  #用户年龄
 	status TINYINT #用户身份 1-老师 0-学生
 );
-INSERT INTO user VALUES(NULL,"曾子芹","zengziqin@126.com","13135362978",0,24,0);
-INSERT INTO user VALUES(NULL,"李敏","1442184033@qq.com.com","15115756664",0,22,0);
-INSERT INTO user VALUES(NULL,"文丽","wenli@sohu.com","18773847455",1,23,0);
-INSERT INTO user VALUES(NULL,"何丹","hedan@163.com","15515767548",1,25,0);
-INSERT INTO user VALUES(NULL,"徐杜娟","983054134@qq.com","13535356785",0,21,0);
-INSERT INTO user VALUES(NULL,"魏红","weihong@hanshou.com","15815538960",1,45,1);#老师
-INSERT INTO user VALUES(NULL,"江庭","jiangting@hanshou.com","18934568934",0,43,1);#老师
+INSERT INTO user VALUES(NULL,"曾子芹","1A3456","zengziqin@126.com","13135362978",0,24,0);
+INSERT INTO user VALUES(NULL,"李敏","1B3456","1442184033@qq.com.com","15115756664",0,22,0);
+INSERT INTO user VALUES(NULL,"文丽","1C3456","wenli@sohu.com","18773847455",1,23,0);
+INSERT INTO user VALUES(NULL,"何丹","1D3456","hedan@163.com","15515767548",1,25,0);
+INSERT INTO user VALUES(NULL,"徐杜娟","1E3456","983054134@qq.com","13535356785",0,21,0);
+INSERT INTO user VALUES(NULL,"魏红","1F3456","weihong@hanshou.com","15815538960",1,45,1);#老师
+INSERT INTO user VALUES(NULL,"江庭","1G3456","jiangting@hanshou.com","18934568934",0,43,1);#老师
 
 #4借阅证表
 CREATE TABLE book_card(
@@ -123,7 +267,7 @@ CREATE TABLE book_card(
 	quantity TINYINT DEFAULT 3,#用户可借书的数量,学生3本,老师5本
 	credit TINYINT #用户信誉(是否有过借书未还) 2-信誉很好 0-信誉差 1-信誉一般
 );
-INSERT INTO book_card VALUES(NULL,1,2,1);#1号用户借了1本书
+INSERT INTO book_card VALUES(1342000,1,2,1);#1号用户借了1本书
 INSERT INTO book_card VALUES(NULL,2,DEFAULT,1); 
 INSERT INTO book_card VALUES(NULL,3,DEFAULT,1);
 INSERT INTO book_card VALUES(NULL,4,DEFAULT,1);
@@ -135,7 +279,7 @@ INSERT INTO book_card VALUES(NULL,7,5,1);#老师
 CREATE TABLE book_order(
 	oid INT PRIMARY KEY AUTO_INCREMENT,
 	bid INT, #外键关联图书id
-	lid	INT, #外键关联借阅证id
+	cid	INT, #外键关联借阅证id
 	borrow_date VARCHAR(64), #借书日期
 	back_date VARCHAR(64) #还书日期
 );

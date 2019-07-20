@@ -1,0 +1,11 @@
+footer{
+    height: 70px;
+    width: 100%;
+    background-image: linear-gradient(to bottom,#49342a,#3b2d25);
+    text-align: center;
+    color:#fff;
+    margin-top:10px;
+ }
+p{
+    padding-top:10px;
+}
