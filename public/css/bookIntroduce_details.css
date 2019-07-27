@@ -1,0 +1,41 @@
+div.mt-3.bg-white{
+	height: 800px;
+}
+.mt-3.bg-white>p{
+	background:url("../img/index/title_bg_01.gif") no-repeat;
+	height: 53px;
+	line-height:53px;
+	width: 785px;
+	margin:0 auto;
+	color: #000;
+	font-family: 楷体_GB2312;
+	font-size: 14px;
+	font-weight: bold;
+}
+table{
+	width: 785px;
+	margin:0 auto;
+	text-indent:25px;
+	border: 1px solid #6298E2;
+	border-collapse: collapse;
+}
+table td,table th{
+	width: 392px;
+	border: 1px solid #6298E2;
+	height: 50px;
+}
+table th{
+	background-color: #8CB4E8;
+}
+[rowspan="6"]+td{
+	color: #a90505;
+}
+td a{
+	border-color: #FFFFFF #000000 #000000 #FFFFFF;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px 10px;
+}
+td a:hover{
+	background-color:#6298e2;
+}

@@ -43,21 +43,27 @@ th{background-color: #8CB4E8;}
  [colspan="2"]{
     width: 390px;
  }
+.pagination li~li{
+	margin-left:5px;
+}
+.active{
+	background-color:#007bff;
+	color:#fff;
+}
 table ul li{
 	list-style-image:none;
 }
-#group1 table,#group2 table{
+#group1 table{
 	width: 90%;
 	margin:0 auto;
 }
-#group1>table td{
-	height: 50px;
+#group1 table td{
+	height: 25px;
 }
-#group2>table td{
-	text-align:left;
-	padding:6px;
+#group1 table td:nth-child(4){
+	width: 20%;
 }
-#group1,#group2{
+#group1{
 	width: 100%;
 	height: 250px;
 	position:absolute;

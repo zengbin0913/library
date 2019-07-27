@@ -25,27 +25,27 @@
 .guider_content ul li a:hover{
     color:#b63300;
 }
-#resource1 table,#resource3 table{
+#resource table,#resource3 table{
 	width: 90%;
 	border: 1px solid #6298E2;
 	border-collapse: collapse;
 	margin-top:20px;
 	margin-left:50px;
 }
-#resource1 table th,#resource3 table th{
+#resource table th,#resource3 table th{
 	background-color: #8CB4E8;
 	text-align: center;
 	color:#fff;
 	height: 50px;
 	border: 1px solid #6298E2;
 }
-#resource1 table td,#resource3 table td{
+#resource table td,#resource3 table td{
 	background-color: #EBF2FA;
     text-align: center;
 	border: 1px solid #6298E2;
 	height: 50px;
 }
-#resource1 table td a,#resource3 table td a{
+#resource table td a,#resource3 table td a{
 	color:#1e50a2;
 }
 #resource1,#resource2,#resource3,#resource4{

@@ -38,7 +38,7 @@ table { border-collapse:collapse; border-spacing:0; }
     background:url("../img/index/logon_left.gif") no-repeat;
     margin:0;
   }
-  .new_title{
+.new_title{
       height: 38px;
       line-height: 38px;
       text-align: center;
@@ -46,3 +46,34 @@ table { border-collapse:collapse; border-spacing:0; }
       font-weight: bold;
       background: url("../img/index/td_03.gif");
   }
+ /*本馆概况details*/
+h6{
+	font-weight:bold;
+	text-align:center
+}
+p{
+	text-indent:30px;
+	padding-left:6px;
+}
+ /*下载中心details*/
+.mt-3.bg-white>table{
+	width: 90%;
+	border: 1px solid #6298E2;
+	border-collapse: collapse;
+	margin-top:20px;
+	margin-left:50px;
+}
+.mt-3.bg-white>table th,.mt-3.bg-white>table td{
+	background-color: #8CB4E8;
+	text-align: center;
+	color:#fff;
+	height: 50px;
+	border: 1px solid #6298E2;
+}
+.mt-3.bg-white>table td{
+	background-color: #EBF2FA;
+	color:#000;
+}
+.mt-3.bg-white>table td a	{
+	color:#1e50a2;
+}

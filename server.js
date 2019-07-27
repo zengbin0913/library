@@ -6,7 +6,9 @@ server.listen(8080);
 server.use(express.static("public"));
 //引入第三方模块cors
 const cors=require("cors");
-
+server.use(cors({
+	origin:"http://127.0.0.1:5500"
+}))
 //引入第三方模块
 const bodyParser=require("body-parser");
 //挂载第三方模块
@@ -16,9 +18,24 @@ server.use(bodyParser.urlencoded({
 //1引入首页路由器模块
 const indexRouter=require("./routes/index.js");
 //挂载路由
-server.use("/index",indexRouter)
+server.use("/index",indexRouter);
 
-//2引入用户路由器模块
+//2引入轮播图路由器模块
+const carouselRouter=require("./routes/carousel.js");
+//挂载路由
+server.use("/carousel",carouselRouter);
+
+//3引入用户路由器模块
 const userRouter=require("./routes/user.js");
 //挂载路由
-server.use("/user",userRouter)
+server.use("/user",userRouter);
+
+//4引入书籍路由器模块
+const bookRouter=require("./routes/book.js");
+//挂载路由
+server.use("/book",bookRouter);
+
+//5引入活动路由器模块
+const activityRouter=require("./routes/activity.js");
+//挂载路由
+server.use("/activity",activityRouter);

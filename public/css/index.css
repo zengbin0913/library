@@ -89,6 +89,9 @@
   background:#ded0c7;
   border-radius: 4px;
 }
+.index_left>.logon>.logon_content{
+	height: 166px;
+}
 .index_left .logon_content table{
   width: 100%;
   margin:10px auto;
@@ -104,6 +107,24 @@ button.btn{
   font-size: 12px;
   padding:0.25rem 2rem;
 }
+#login-library{
+  background-color:#000;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  width:200px;height:200px;
+  opacity:0.8;
+}
+#login-library>p{
+  font-size:24px;
+}
+#login-library>a{
+  margin:0 auto;
+}
+
 .index_left>.notice>.notice_title{
   background: url("../img/index/info_11.gif") repeat;
 }
@@ -195,14 +216,13 @@ button.btn{
 }
 .left>.aside>div{
   width: 100%;
-  margin-bottom:10px;
-  background:url("../img/index/td_02.gif");
+  background:url("../img/index/td_02.gif") repeat-x;
 }
 .left>.aside>div>#p1{
   background:url("../img/index/Notice_left_02.gif") no-repeat;
 }
 .left>.aside>div:nth-child(2){
-  background:url("../img/index/LibraryGuides_td_01.gif");
+  background:url("../img/index/LibraryGuides_td_01.gif") repeat-x;
 }
 .left>.aside>div>#p2{
   background:url("../img/index/lGuide_left.gif") no-repeat;
@@ -211,33 +231,33 @@ button.btn{
   background:url("../img/index/rInstruct_left.gif") no-repeat;
 }
 .left>.aside>div:nth-child(4){
-  background:url("../img/index/BookIntroduce_td_01.gif");
+  background:url("../img/index/BookIntroduce_td_01.gif") repeat-x;
 }
 .left>.aside>div>#p4{
   background:url("../img/index/bIntroduce_left.gif") no-repeat;
 }
 .left>.aside>div:nth-child(5){
-  background:url("../img/index/LibraryResources_td_01.gif");
+  background:url("../img/index/LibraryResources_td_01.gif") repeat-x;
 }
 .left>.aside>div>#p5{
-  background:url("../img/index/lResources_left.gif") no-repeat 0px;
+  background:url("../img/index/lResources_left.gif") no-repeat 0px 0px;
 }
 .left>.aside>div:nth-child(6){
-  background:url("../img/index/ReadingGroups_td_01.gif");
+  background:url("../img/index/ReadingGroups_td_01.gif") repeat-x;
 }
 .left>.aside>div>#p6{
   background:url("../img/index/rGroups_left.gif") no-repeat;
 }
 .left>.aside>div:nth-child(7){
   margin-bottom:30px;
-  background:url("../img/index/InformationSearch_td_01.gif");
+  background:url("../img/index/InformationSearch_td_01.gif") repeat-x;
 }
 .left>.aside>div>#p7{
   background:url("../img/index/search_left.gif") no-repeat;
 }
 .left>.aside>div:nth-child(8){
   margin-bottom:5px;
-  background:url("../img/index/td_12.gif");
+  background:url("../img/index/td_12.gif") repeat-x;
 }
 .left>.aside>div>#p8{
   background:url("../img/index/FriendUrl_left_01.gif") no-repeat;
@@ -281,19 +301,23 @@ button.btn{
   color: #fff;
   font-weight: bold;
 }
-.picScoll{
+/*轮播图下*/
+#picScoll{
 	border:1px solid #000;
 	position:relative;
+	overflow: hidden;
 }
-.picScoll ul{
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center;
+#picScoll ul{
+  display:flex; 
+  margin:10px;
 }
-.picScoll ul li~li{
-	margin-left:20px;
+.transition{
+    transition:all .5s linear;
 }
-.picScoll ul li a{
+#picScoll ul li{
+	margin-left:22px;
+}
+#picScoll ul li a{
 	width: 100px;
 	display: block;
 	overflow:hidden;
@@ -301,19 +325,19 @@ button.btn{
 	white-space: nowrap;
 	text-align:center;
 }
-.picScoll>a{
+#picScoll>a{ /*箭头*/
 	display:block;
 	width: 10px;
 	height: 17px;
 	overflow:hidden;
 }
-a.prev{
+a#prev{
 	position:absolute;
 	top:80px;
 	left:0px;
 	background:url("../img/index/arr_lef.png") no-repeat;
 }
-a.next{
+a#next{
 	position:absolute;
 	top:80px;
 	right:0px;

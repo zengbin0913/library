@@ -12,14 +12,14 @@
 <body>
   <!-- 头 -->
   <header class="my_header" id="header"></header>
-    <!-- 焦点轮播图-->
-		<div id="banner">
-			<div id="btn-left"></div>
+  <!-- 焦点轮播图-->
+	<div id="banner">
+		<div id="btn-left"></div>
 			<ul id="ul-imgs" class="transition">
-				<li><a href=""><img src="img/index/banner1.jpg" alt=""></a></li>
-				<li><a href=""><img src="img/index/banner2.jpg" alt=""></a></li>
-				<li><a href=""><img src="img/index/banner3.jpg" alt=""></a></li>
-				<li><a href=""><img src="img/index/banner1.jpg" alt=""></a></li>
+				<!-- <li><img src="img/index/banner1.jpg"></li>
+				<li><img src="img/index/banner2.jpg"></li>
+				<li><img src="img/index/banner3.jpg"></li>-->
+				<li><img src="img/index/banner1.jpg"></li> 
 			</ul>
 			<ul id="ul-idxs">
 				<li class="active"></li>
@@ -27,7 +27,7 @@
         <li></li>
 			</ul>
 			<div id="btn-right"></div>
-		</div>
+	</div>
   <!-- 主体上 -->
   <div class="content_top d-flex">
     <!-- 左 -->
@@ -41,40 +41,32 @@
             <tr>
               <td>用户名称:</td>
               <td>
-                <input max-length="12" placeholder="请输入用户名" type="text" required>
+                <input placeholder="请输入用户名" type="text" required class="w-100" id="uname">
               </td>
-							<!--
-							<img src="img/index/ok.png">正确
-							错误提示：格式为长度为6-12的字符
-							-->
-							<td><span></span></td>
             </tr>
             <tr>
               <td>用户密码:</td>
-              <td><input max-length="8" placeholder="请输入密码" type="password" required></td>
-							<!--
-							<img src="img/index/ok.png">正确
-							错误提示：弹框alert：<img src="img/index/err.png">登录失败,用户名或密码错误
-							-->
-							<td><span></span></td>
+              <td><input placeholder="请输入密码" type="password" required class="w-100" id="upwd"></td>
             </tr>
             <tr>
               <td>登录方式:</td>
               <td colspan="2" class="pt-2">
-                <input type="radio" id="uname" name="m" class="ml-2">
-                <label for="uname">昵称</label>
-                <input type="radio" id="lid" name="m" class="ml-3">
-                <label for="lid">借书证号</label>
+                <label><input type="radio" id="u_name" name="m" class="ml-2" checked>昵称</label>
+                <label><input type="radio" id="lid" name="m" class="ml-3">借书证号</label>
               </td>
             </tr>
             <tr>
               <td colspan="3">
-                <button class="btn btn-primary rounded-0 mx-5">登录</button>
-                <button class="btn btn-danger rounded-0">取消</button>
+                <button class="btn btn-primary rounded-0 mx-5" id="login">登录</button>
+                <button class="btn btn-danger rounded-0" id="cancel">取消</button>
               </td>
             </tr>
           </table>
-        </div>      
+        </div>
+				<div class="d-none m-auto" id="login-library">
+          <p class="text-success text-center mt-3">登录成功!!</p>
+          <a href="Searchsystem.html" target="_blank" class="btn btn-danger d-block w-50" id="sure">确认</a>
+        </div>
       </div>
       <div class="notice">
         <div class="notice_title">
@@ -83,27 +75,27 @@
         <div class="notice_content">
           <div class="scroll pl-2">
             <div class="item mt-2">
-              <a href="index/1.html">2019年图书馆文化志愿者火热招募进行中...</a>
+              <a href="index_notice.html?id=notice1" >2019年图书馆文化志愿者火热招募进行中...</a>
               <em class="float-right pr-2">[06/08]</em>
             </div>
             <div class="item mt-2">
-              <a href="index/2.html">2019年图书馆文化志愿者名单...</a>
+              <a href="index_notice.html?id=notice2">2019年图书馆文化志愿者名单...</a>
               <em class="float-right pr-2">[06/17]</em>
             </div>
-            <div class="item mt-2 text-truncate">
-              <a href="index/3.html">图书馆2019年暑假期间开放安排...</a>
+            <div class="item mt-2">
+              <a href="index_notice.html?id=notice3">图书馆2019年暑假期间开放安排...</a>
               <em class="float-right pr-2">[06/28]</em>
             </div>  
-            <div class="item mt-2 text-truncate">
-              <a href="index/4.html">期末还书通知...</a>
+            <div class="item mt-2">
+              <a href="index_notice.html??id=notice4">期末还书通知...</a>
               <em class="float-right pr-2">[06/28]</em>
             </div>
-            <div class="item mt-2 text-truncate">
-              <a href="index/5.html">2019年下学期图书馆开放公告...</a>
+            <div class="item mt-2">
+              <a href="index_notice.html?id=notice5">2019年下学期图书馆开放公告...</a>
               <em class="float-right pr-2">[06/25]</em>
             </div>
-            <div class="item mt-2 text-truncate mb-2">
-              <a href="index/6.html">2019年下学期图书馆值班安排表...</a>
+            <div class="item mt-2 mb-2 ">
+              <a href="index_notice.html?id=notice6">2019年下学期图书馆值班安排表...</a>
               <em class="float-right pr-2">[07/14]</em>
             </div>
           </div>
@@ -133,8 +125,8 @@
               <img src="img/index/yusi_05.gif" class="w-100">
             </div>
             <div id="biaoyu">
-              <p>语丝：</p>
-              <p>书籍是人类智慧的结晶。读书决定一个人的修养和境界，关系一个民族的素质和力量，影响一个国家的前途和命运。一个不读书的人、不读书的民族，是没有希望的。大家要记住一个真理：书籍是不能改变世界的，但读书可以改变人，人是可以改变世界的。</p>
+              <p class="m-0">语丝：</p>
+              <p class="m-0">书籍是人类智慧的结晶。读书决定一个人的修养和境界，关系一个民族的素质和力量，影响一个国家的前途和命运。一个不读书的人、不读书的民族，是没有希望的。大家要记住一个真理：书籍是不能改变世界的，但读书可以改变人，人是可以改变世界的。</p>
               <p class="text-right">——温家宝</p>
             </div>
         </div>
@@ -146,74 +138,30 @@
       <div class="right_top">
         <div class="right_top_title">文化信息</div>
         <div class="right_top_content">
-          <ul>
-            <li class="pl-2 mt-2"><a href="index/culture.html" target="_blank">欢度佳节不忘勤俭...</a></li>
-            <li class="pl-2 mt-2"><a href="index/culture2.html" target="_blank">读好书阅读从童年...</a></li>
-            <li class="pl-2 mt-2"><a href="index/culture3.html" target="_blank">让孩子们健康成长...</a></li>
-            <li class="pl-2 mt-2"><a href="index/culture4.html" target="_blank">书香龙阳全民阅读...</a></li>
-            <li class="pl-2 mt-2"><a href="index/culture5.html" target="_blank">学习道德模范...</a></li>
-            <li class="pl-2 mt-2"><a href="index/culture6.html" target="_blank">改变自己从阅读开始...</a></li>
-          </ul>
+					<img src="img/index/quanming.jpg">
         </div>
-        <div class="right_top_title2 mt-4">阅读之星</div>
+        <div class="right_top_title2 mt-2">阅读之星</div>
         <div class="right_top_content2">
-          <ul class="mt-2 mb-0">
-            <li class="d-flex mb-1">
-              <div class="w-30 px-1">刘卓鑫</div>
-              <div clas="w-70">
-                <img src="img/index/Star.gif"><img src="img/index/Star.gif"><img src="img/index/Star.gif"><img src="img/index/Star.gif"><img src="img/index/Star.gif">
-              </div>
-            </li>
-            <li class="d-flex mb-1">
-                <div class="w-30 px-1">郭茂林</div>
-                <div clas="w-70">
-                  <img src="img/index/Star.gif"><img src="img/index/Star.gif"><img src="img/index/Star.gif"><img src="img/index/Star.gif">
-                </div>
-            </li>
-            <li class="d-flex mb-1">
-                  <div class="w-30 px-1">刘威</div>
-                  <div clas="w-70">
-                    <img src="img/index/Star.gif"><img src="img/index/Star.gif"><img src="img/index/Star.gif">
-                  </div>
-            </li>
-            <li class="d-flex mb-1">
-                <div class="w-30 px-1">何丹</div>
-                  <div clas="w-70">
-                    <img src="img/index/Star.gif"><img src="img/index/Star.gif">
-                  </div>
-            </li>
-            <li class="d-flex mb-1">
-              <div class="w-30 px-1">罗丹</div>
-                <div clas="w-70">
-                  <img src="img/index/Star.gif">
-                </div>
-            </li>
-            <li class="d-flex mb-1">
-                <div class="w-30 px-1">曾雪莲</div>
-                  <div clas="w-70">
-                    <img src="img/index/Star.gif">
-                  </div>
-            </li>
+          <ul class="mt-2 mb-0" id="book_quantity">
             <li class="more pr-2 mb-1"><a href="ReadingGroups.html">more&gt;&gt;</a></li>  
           </ul>
         </div>
       </div>
-    
     </div>
   </div>
   <!-- 主体下1 -->
-  <div class="content_bottom d-flex">
+	  <div class="content_bottom d-flex">
     <!-- 左 -->
     <div class="left">
       <div class="aside">
-        <div><p id="p1" class="text-center"><a href="LibraryGuides.html" class="title">本馆概况</a></p></div>
-        <div><p id="p2" class="text-center"><a href="ReadingGuides.html" class="title">阅读指导</a></p></div>
-        <div><p id="p3" class="text-center"><a href="LibraryResources.html" class="title">下载中心</a></p></div>
-        <div><p id="p4" class="text-center"><a href="BookIntroduce.html" class="title">新书推荐</a></p></div>
-        <div><p id="p5" class="text-center"><a href="personal_center.html" class="title">个人中心</a></p></div>
-        <div><p id="p6" class="text-center"><a href="ReadingGroups.html" class="title">读者园地</a></p></div>
-        <div><p id="p7" class="text-center"><a href="InformationSearch.html" class="title">馆藏查询</a></p></div>
-        <div><p id="p8" class="text-center m-0"><a href="#" class="title">友情链接</a></p></div>
+        <div><p id="p1" class="text-center m-0"><a href="LibraryGuides.html" class="title">本馆概况</a></p></div>
+        <div><p id="p2" class="text-center m-0"><a href="ReadingGuides.html" class="title">阅读指导</a></p></div>
+        <div><p id="p3" class="text-center m-0"><a href="LibraryResources.html" class="title">下载中心</a></p></div>
+        <div><p id="p4" class="text-center m-0"><a href="BookIntroduce.html" class="title">新书推荐</a></p></div>
+        <div><p id="p5" class="text-center m-0"><a href="personal_center.html" class="title">个人中心</a></p></div>
+        <div><p id="p6" class="text-center m-0"><a href="ReadingGroups.html" class="title">读者园地</a></p></div>
+        <div><p id="p7" class="text-center m-0"><a href="InformationSearch.html" class="title">馆藏查询</a></p></div>
+        <div><p id="p8" class="text-center m-0"><a href="javascript:;" class="title">友情链接</a></p></div>
         <ul class="m-0">
           <li class="mb-1 text-center pt-1"><a href="http://www.changshalib.cn/" target="_blank">长沙图书馆</a></li>
           <li class="mb-1 text-center"><a href="http://www.nlc.cn/" target="_blank">国家图书馆</a></li>
@@ -228,46 +176,30 @@
     <!-- 右 -->
     <div class="right">
       <div>
-        <ul>
-          <li class="mb-1"><a href="ReadingGuides/activity.html" target="_blank">心灵驿站:提高孩子的专注力...</a></li>
-          <li class="mb-1"><a href="ReadingGuides/activity3.html" target="_blank">“创想汇:3D打印DIY培训活动...</a></li>
-          <li class="mb-1"><a href="ReadingGuides/activity2.html" target="_blank">星期讲座:”禁毒知识"...</a></li>
-          <li class="mb-1"><a href="ReadingGuides/activity4.html" target="_blank">英语沙龙:英语能力众筹...</a></li>
+        <ul id="p_activity">
+					<li class="mb-1 text-right"><a href="ReadingGuides.html">more&gt;&gt;</a></li>
         </ul>
       </div>
       <div class="mt-1">
-        <ul>
-          <li class="mb-1"><a href="ReadingGuides/activitys1.html" target="_blank">小图书馆员职业体验...</a></li>
-          <li class="mb-1"><a href="ReadingGuides/activitys2.html" target="_blank">亲子Fun读英文...</a></li>
-          <li class="mb-1"><a href="ReadingGuides/activitys3.html" target="_blank">谈谈都市人的睡眠问题...</a></li>
-          <li class="mb-1"><a href="ReadingGuides/activitys4.html" target="_blank">视障读者服务项目...</a></li>
+        <ul id="e_activity">
+          <li class="mb-1 text-right"><a href="ReadingGuides.html">more&gt;&gt;</a></li>
         </ul>
       </div>        
     </div>
   </div>
 	<!-- 主体下2-->
-	<div class="mt-3 picScoll">	
-		<ul class="m-0 py-2">
-			<li><a href="index/book2.html" target="_blank"><img src="img/index/1.jpg" class="pb-1"><br>开着坦克去唐朝</a></li>
-			<li><a href="index/book1.html" target="_blank"><img src="img/index/2.jpg" class="pb-1"><br>中国自信</a></li>
-			<li><a href="index/book.html" target="_blank"><img src="img/index/3.jpg" class="pb-1"><br>中国抗日战争全纪录</a></li>
-			<li><a href="index/book3.html" target="_blank"><img src="img/index/4.jpg" class="pb-1"><br>全民社交</a></li>
-			<li><a href="index/book4.html" target="_blank"><img src="img/index/5.jpg" class="pb-1"><br>“四个全面”党员干部学习读本</a></li>
-			<li><a href="index/book5.html" target="_blank"><img src="img/index/6.jpg" class="pb-1"><br>移动互联网时代</a></li>
-			<li><a href="index/book6.html" target="_blank"><img src="img/index/7.jpg" class="pb-1"><br>盐多必失</a></li>
-			<li><a href="index/book7.html" target="_blank"><img src="img/index/8.jpg" class="pb-1"><br>中国未来30年</a></li>
-			<!-- <li><a href="index/book7.html" target="_blank"><img src="img/index/9.jpg" class="pb-1"><br>中国未来30年</a></li>
-			<li><a href="index/book7.html" target="_blank"><img src="img/index/10.jpg" class="pb-1"><br>中国未来30年</a></li> -->
-		</ul>
-		<a href="javascript:;" class="prev"></a>
-		<a href="javascript:;" class="next"></a>
+	<div class="mt-3" id="picScoll">	
+		<ul id="ul-imgss"></ul>
+		<a href="javascript:;" id="prev"></a>
+		<a href="javascript:;" id="next"></a>
 	</div>
   <!-- 脚 -->
   <footer class="my_footer">
   </footer>
-	<script src="js/carousel.js"></script>
-	<script src="js/jquery-1.11.3.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/jquery-1.11.3.js"></script>
 	<script src="js/header.js"></script>
+	<script src="js/index.js"></script>
 	<script src="js/footer.js"></script>
 </body>
 </html>

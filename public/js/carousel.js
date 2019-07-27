@@ -1,3 +1,4 @@
+//焦点轮播图
 (function(){
 	var i=0;
     var LIWIDTH=1000;
@@ -28,7 +29,6 @@
       for(var li of lis){
         li.className=""
       }
-      console.log(i);
       if(i==LICOUNT){
         i=0;
         setTimeout(function(){
@@ -94,5 +94,73 @@
           }
         }
       }
+    }
+})(),
+//主体下轮播
+(function(){
+	var i=0;
+    var LIWIDTH=122;
+    var DURATION=500;
+    var LICOUNT=10;
+    var ulImgs=document.getElementById("ul-imgss");
+
+	function moveTo(to){
+      if(to==undefined){
+        to=i+1;
+      }
+      if(i==0){
+        if(to>i){
+          ulImgs.className="transition";
+        }else{
+          ulImgs.className="";
+          ulImgs.style.marginLeft=-LIWIDTH*(LICOUNT-8)+"px";
+          setTimeout(function(){
+            moveTo(LICOUNT-8);
+          },0);
+          return;
+        }
+      }
+      i=to;
+      ulImgs.style.marginLeft=-i*LIWIDTH+"px";
+      if(i==3){
+        i=0;
+        setTimeout(function(){
+          ulImgs.className="";
+          ulImgs.style.marginLeft=0;
+        },100)
+      }
+    }
+	/*	箭头*/
+	var btnLeft=document.getElementById("prev");
+    var btnRight=document.getElementById("next");
+    var canClick=true;
+    btnRight.onclick=function(){
+      move(1)
+    }
+    function move(n){
+      if(canClick){
+        moveTo(i+n);
+        canClick=false;
+        setTimeout(function(){
+          canClick=true;
+        },DURATION+100);
+      }
+    }
+    btnLeft.onclick=function(){
+      move(-1);
+    }
+
+	var interval=3000;
+    var timer=setInterval(function(){
+      moveTo()
+    },3000);
+    var banner=document.getElementById("picScoll");
+    banner.onmouseover=function(){
+      clearInterval(timer);
+    }
+    banner.onmouseout=function(){
+      timer=setInterval(function(){
+        moveTo()
+      },3000);
     }
 })()

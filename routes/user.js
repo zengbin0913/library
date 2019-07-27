@@ -42,7 +42,7 @@ user.get("/v1/list",(req,res)=>{
 	if(!obj.pagesize)obj.pagesize=5;
 	var start=(obj.pno-1)*obj.pagesize;
 
-	var sql=`select uid,uname,email,phone,sex,age,status from user limit ?,?`;
+	var sql=`select uid,uname,upwd,email,phone,sex,age,status from user limit ?,?`;
 	pool.query(sql,[start,obj.pagesize],(err,result)=>{
 		if(err)throw err;
 		res.send(result);
@@ -77,5 +77,23 @@ user.get("/v1/select/:uid",(req,res)=>{
 			res.send(result);
 		else res.send({code:301,msg:"查询失败"});//没查到
 	});
+});
+//8用户列表历史借书数量接口---阅读之星
+user.get("/v1/book_quantity_list",(req,res)=>{
+	var sql=`select cid,uname,hostiry_quantity,status from book_card,user where book_card.uid=user.uid order by hostiry_quantity desc`;
+	pool.query(sql,(err,result)=>{
+		if(err)throw err;
+		res.send(result);
+	})
+});
+//9用户检索历史借书数量查询
+user.get("/v1/book_quantity_select/:uname",(req,res)=>{
+	var obj=req.params;
+	var sql=`select cid,uname,hostiry_quantity,status from book_card,user where book_card.uid=(select uid from user where uname=?) and book_card.uid=user.uid`;
+	pool.query(sql,[obj.uname],(err,result)=>{
+		if(err)throw err;
+		if(result.length>0)res.send(result);
+		else res.send({code:301,msg:"暂无此用户借阅信息"});
+	})
 });
 module.exports=user;
