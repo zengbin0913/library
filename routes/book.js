@@ -55,4 +55,13 @@ book.get("/v1/book_details_total/:bname",(req,res)=>{
 		else res.send({code:301,msg:"暂无图书信息"});
 	})
 });
+//6分类查询
+book.get("/v1/book_type/:cname",(req,res)=>{
+	var obj=req.params;
+	var sql=`select * from book where book.fid=(select fid from book_family where cname=?)`;
+	pool.query(sql,[obj.cname],(err,result)=>{
+		if(err)throw err;
+		if(result.length>0) res.send(result);
+	})
+});
 module.exports=book;
