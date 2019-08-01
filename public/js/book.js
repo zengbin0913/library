@@ -14,18 +14,31 @@ $(function(){
 					<td rowspan="6" class="text-center"><img src="${pic}" class="py-2"></td>
 					<td>${bname}</td>
 				</tr>
-				<tr><td>"作者："+${author}</td></tr>
+				<tr><td>作者：${author}</td></tr>
 				<tr>
-					<td>"出版社："+${publish}</td>
+					<td>出版社：${publish}</td>
 				</tr>
-				<tr><td>"出版时间："+${publish_time}</td></tr>
+				<tr><td>出版时间：${publish_time}</td></tr>
 				<tr><td>页数：未知</td></tr>
 				<tr><td>版次：未知</td></tr>
 			    <tr><td colspan="2" class="py-2">${details}</td></tr>
-				<tr><td colspan="2" class="text-center"><a href="">图书预约</button></a></tr>
+				<tr><td colspan="2" class="text-center"><a href="javascript:;">图书预约</a></tr>
 				`;
 				$("title").html(`好书推荐-${bname}`)
 				$("#detail").html(html);
+				$("#detail a").click(function(){
+					$.ajax({
+						url:"http://127.0.0.1:8080/user/session",
+						type:"get",
+						datatype:"json",
+						success(result){
+							if(result.user!=undefined &&result.user!=""){
+								alert("预约成功")
+							}
+							else alert("尚未登录")
+						}
+					})
+				})
 			}
 		})
 	}
@@ -55,4 +68,4 @@ $(function(){
 			}
 		})
 	}
-})
+});

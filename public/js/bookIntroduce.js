@@ -35,7 +35,7 @@ $(function(){
 					<td>${result[k].ISBN}</td>
 					<td>${result[k].publish}</td>
 					</tr>`;
-			}console.log(html)
+			}
 			$("#new_book").html(html);
 		}
 	})

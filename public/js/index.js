@@ -23,16 +23,10 @@ $(function(){
 			type:"get",
 			datatype:"json",
 			success:function(result){
-				if(result.code==200 && $("#u_name").prop("checked")==true){//用户密码正确
+				if(result.code==200 && $("#u_name").prop("checked")==true){//用户密码正确且登录方式正确
 					$("#login-library").removeClass("d-none");//提示
 					$("#sure").click(function(){//当点击提示按钮的确认后
 					  $("#login-library").addClass("d-none");//提示按钮消失
-					  $(".logon_content").html(`<h3 class="text-danger pl-2">${uname}</h3>   
-						                        <h5 class="text-center">欢迎您登录汉寿一中图书馆!!</h5>
-											    <p class="">
-						                          <a class="btn btn-primary" href="personal_center.html">进入个人中心</a>
-												  <a class="btn btn-danger ml-2" href="index.html">注销</a>
-						                        </p>`);//登录的内容变化
 					});
 					$(window).click(function(){//当点击其它的地方时
 						$("#login-library").addClass("d-none");
@@ -52,7 +46,7 @@ $(function(){
 	//单击取消按钮
 	$("#cancel").click(function(){
 		$("#uname").val("");upwd=$("#upwd").val("");
-	})	
+	})
 });
 //3阅读之星模块
 $(function(){
@@ -111,5 +105,35 @@ $(function(){
 			$("#p_activity").prepend(html);
 			$("#e_activity").prepend(html2);
 		}
+	})
+})
+//登录状态
+$(function(){
+	$.ajax({
+		url:"http://127.0.0.1:8080/user/session",
+		type:"get",
+		datatype:"json",
+		success(result){
+			if(result.user!=undefined &&result.user!=""){	
+				console.log(result);
+				$(".logon_content").addClass("d-none");
+				$("#login_content1").removeClass("d-none")
+				$("#login_content1 h3").html(`${result.user.uname}`);//登录的内容变化
+			}
+		}
+	})	
+})
+$(function(){
+	$("#logout").click(function(){
+		$.ajax({
+			url:"http://127.0.0.1:8080/user/session/delete",
+			type:"get",
+			success(result){
+				if(result.user=="")
+				{	$(".logon_content").removeClass("d-none");
+					$("#login_content1").addClass("d-none")	
+				}
+			}
+		})
 	})
 })

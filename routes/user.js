@@ -8,7 +8,9 @@ user.post("/v1/reg",(req,res)=>{
 	var sql=`insert into user set ?`;
 	pool.query(sql,[obj],(err,result)=>{
 		if(err)throw err;
-		if(result.affectedRows>0) res.send({code:200,msg:"注册成功"});
+		if(result.affectedRows>0) {			
+			res.send({code:200,msg:"注册成功"});
+		}
 		else res.send({code:301,msg:"注册失败"});
 	});
 });
@@ -18,9 +20,21 @@ user.get("/v1/login/:uname&:upwd",(req,res)=>{
 	var sql=`select uname from user where uname=? and binary upwd=?`
 	pool.query(sql,[obj.uname,obj.upwd],(err,result)=>{
 		if(err)throw err;
-		if(result.length>0)res.send({code:200,msg:"登录成功"});
+		if(result.length>0){
+			req.session.user=result[0];
+			res.send({code:200,msg:"登录成功"});
+		}
 		else res.send({code:301,msg:"登录失败"});
 	});
+});
+//查询session
+user.get("/session",(req,res)=>{
+	res.send(req.session);
+});
+//退出登录,清除session
+user.get("/session/delete",(req,res)=>{
+	req.session.user="";
+	res.send(req.session);
 });
 //3用户修改
 user.put("/v1/update",(req,res)=>{
@@ -61,11 +75,11 @@ user.delete("/v1/delete/:uid",(req,res)=>{
 //6查询用户名是否存在
 user.get("/v1/seluname/:uname",(req,res)=>{
 	var obj=req.params;
-	pool.query(`SELECT uname FROM user WHERE uname=?`,[obj.uname],(err,result)=>{
+	pool.query(`SELECT * FROM user WHERE uname=?`,[obj.uname],(err,result)=>{
 		if(err)throw err;
 		if(result.length>0)
-			res.send({code:301,msg:"用户名已存在"});
-		else res.send({code:200,msg:"用户名可用"});
+			res.send(result);
+		else res.send({code:301,msg:"用户不存在"});
 	});
 });
 //7用户检索
@@ -93,7 +107,36 @@ user.get("/v1/book_quantity_select/:uname",(req,res)=>{
 	pool.query(sql,[obj.uname],(err,result)=>{
 		if(err)throw err;
 		if(result.length>0)res.send(result);
-		else res.send({code:301,msg:"暂无此用户借阅信息"});
+		else res.send({code:301,msg:"此用户无借阅信息"});
 	})
+});
+//10查询用户的借阅信息
+user.get("/v1/book_order_information/:uname",(req,res)=>{
+	var obj=req.params;
+	var information=[];
+
+	var sql=`select bname,author from book where book.bid=(select bid from book_order where book_order.cid=(select cid from book_card where book_card.uid=(select uid from user where uname=?)))`;
+
+	pool.query(sql,[obj.uname],(err,result)=>{
+		if(err)throw err;
+		if(result.length>0) information.push(result);
+
+		var sql2=`select borrow_date, back_date from book_order where book_order.cid=(select cid from book_card where book_card.uid=(select uid from user where uname=?))`;
+			pool.query(sql2,[obj.uname],(err,result)=>{
+				if(err)throw err;
+				if(result.length>0) information.push(result);
+
+				var sql3=`select uname,email,phone,sex,status from user where uname=?`;
+					pool.query(sql3,[obj.uname],(err,result)=>{
+						if(err)throw err;
+						if(result.length>0) information.push(result);
+						res.send(information);	
+					});
+			});
+	});
+
+	
+	
+	
 });
 module.exports=user;

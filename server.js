@@ -4,21 +4,29 @@ var server=express();
 server.listen(8080);
 //挂载静态资源
 server.use(express.static("public"));
-//引入第三方模块cors
+//引入模块cors
 const cors=require("cors");
 server.use(cors({
 	origin:"http://127.0.0.1:5500"
-}))
+}));
 //引入第三方模块
 const bodyParser=require("body-parser");
 //挂载第三方模块
 server.use(bodyParser.urlencoded({
 	extended:false
 }));
-//1引入首页路由器模块
-const indexRouter=require("./routes/index.js");
-//挂载路由
-server.use("/index",indexRouter);
+//引入模块express-session,cookie-parser
+const session=require("express-session");
+const cookieParser=require("cookie-parser");
+//挂载模块
+server.use(cookieParser());
+server.use(session({
+	secret:"12345",   
+    resave:true,           
+    saveUninitialized:true  
+}));
+
+
 
 //2引入轮播图路由器模块
 const carouselRouter=require("./routes/carousel.js");
